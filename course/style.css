@@ -358,3 +358,144 @@ input:focus {
     font-weight: bold;
     text-align: center;
 }
+
+/* =========================
+   TABLET + MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 90px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    /* STATS */
+    .stats-container {
+        gap: 25px;
+    }
+
+    .stat-card {
+        width: 140px;
+        height: 140px;
+    }
+
+    .stat-card h2 {
+        font-size: 28px;
+    }
+
+    .stat-card p {
+        font-size: 14px;
+    }
+
+    /* COURSES */
+    .course-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+    }
+
+    .course-card {
+        padding: 20px;
+    }
+
+    /* BENEFITS */
+    .benefits-grid {
+        gap: 20px;
+    }
+
+    /* REVIEWS */
+    .review-grid {
+        gap: 15px;
+    }
+
+    .review {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* SIGNUP */
+    .signup input {
+        width: 90%;
+    }
+
+    /* WHATSAPP BUTTON */
+    .whatsapp {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+   ========================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 70px 15px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+        line-height: 1.4;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* STATISTICS */
+    .stat-card {
+        width: 120px;
+        height: 120px;
+    }
+
+    .stat-card h2 {
+        font-size: 24px;
+    }
+
+    .stat-card p {
+        font-size: 13px;
+    }
+
+    /* ICONS */
+    .icon {
+        font-size: 32px;
+    }
+
+    /* BUTTON */
+    .btn-main {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
+
+    /* SIGNUP */
+    .signup input {
+        width: 95%;
+    }
+
+}
