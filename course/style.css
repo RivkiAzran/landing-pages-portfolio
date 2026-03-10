@@ -267,6 +267,7 @@ nav a {
     color: white;
     border: none;
     border-radius: 6px;
+    z-index:3;
 }
 
 footer {
@@ -289,8 +290,25 @@ footer {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     text-decoration: none;
+    z-index: 9999;
+    
+    /* כאן הוספתי את אפקט הזוהר */
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    animation: pulse-glow 2s infinite;
+}
+
+/* האנימציה שיוצרת את אפקט הפעימה הזוהר */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }
 
 #particles {
@@ -306,4 +324,37 @@ footer {
 .hero-text{
 position:relative;
 z-index:2;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.input-error {
+    border-color: #ff4d4f;
+}
+
+.error-message {
+    color: #ff4d4f;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.success-message {
+    color: #28a745;
+    font-size: 1em;
+    margin-bottom: 12px;
+    font-weight: bold;
+    text-align: center;
 }

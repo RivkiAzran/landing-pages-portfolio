@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אירועי יוקרה – Experience Luxury</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div id="particles"></div>
+        <div class="overlay"></div>
+        <div class="hero-text">
+            <h1>חוויה בלתי נשכחת – אירועי יוקרה</h1>
+            <p>יצירת חוויות יוקרה מותאמות אישית לכל סוג אירוע</p>
+            <a href="#contact" class="btn-main">קבע פגישה עכשיו</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" data-aos="fade-up">
+        <h2>מי אנחנו</h2>
+        <p>נעים להכיר, אנחנו [שם החברה]. אנחנו מאמינים שהאירוע שלכם צריך לשקף את מי שאתם, בלי פשרות ובלי רעשי רקע.
+            אנחנו לא רק מפיקים אירועים – אנחנו נותנים לכם את הכלים להפוך את החזון שלכם למציאות. אנחנו כאן כדי ללוות אתכם
+            בתהליך, לדייק את הבחירות שלכם ולהבטיח שהתוצאה תהיה לא פחות ממושלמת.
+            והחלק הכי טוב? אתם מקבלים את השליטה המלאה לידיים שלכם. תחסכו את דמי התיווך המיותרים ותהנו מאירוע שמרגיש
+            בדיוק כמוכם, בלי לשבור תוכניות חיסכון.</p>
+        <div class="about-images">
+            <img src="../assets/img/event5.jpg"
+                alt="Event 1">
+            <img src="../assets/img/event6.jpg"
+                alt="Event 2">
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" data-aos="fade-up">
+        <h2>אירועים קודמים</h2>
+        <div class="portfolio-grid">
+
+            <div class="portfolio-item">
+                <img src="../assets/img/event1.jpg" alt="">
+                <div class="zoom-icon"><i class="fa-solid fa-expand"></i></div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="../assets/img/event2.jpg" alt="">
+                <div class="zoom-icon"><i class="fa-solid fa-expand"></i></div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="../assets/img/event3.jpg" alt="">
+                <div class="zoom-icon"><i class="fa-solid fa-expand"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Gallery -->
+    <div class="image-modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div class="modal-controls">
+            <button id="nextImg"><i class="fa-solid fa-arrow-left"></i></button>
+            <button id="prevImg"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <section class="benefits" data-aos="fade-up">
+        <h2>למה לבחור בנו</h2>
+        <div class="benefits-grid">
+            <div><i class="fa-solid fa-crown"></i>
+                <p>עיצוב אישי ומותאם לכל לקוח</p>
+            </div>
+            <div><i class="fa-solid fa-handshake-angle"></i>
+                <p>שירות VIP לכל האירוע</p>
+            </div>
+            <div><i class="fa-solid fa-calendar-check"></i>
+                <p>ניהול מושלם עד לפרטים הקטנים</p>
+            </div>
+            <div><i class="fa-solid fa-star"></i>
+                <p>חוויית לקוח בלתי נשכחת</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>צור קשר</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="שם מלא" dir="rtl">
+            <input type="tel" id="phone" placeholder="טלפון" dir="rtl">
+            <input type="email" id="email" placeholder="אימייל" dir="rtl">
+            <button type="submit">שלחו פרטים</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© Experience Luxury</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
