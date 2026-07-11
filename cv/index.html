@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rivka Azran — Full Stack Engineer</title>
+<meta name="description" content="Rivka Azran, Full Stack Engineer — React, TypeScript, Node.js, NestJS, SQL. Portfolio and CV.">
+<style>
+  :root {
+    --bg: #0b1120;
+    --bg-alt: #111a2e;
+    --card: #16213a;
+    --border: rgba(255,255,255,0.08);
+    --text: #e8ecf5;
+    --text-dim: #9aa5bd;
+    --accent: #6ee7c9;
+    --accent-2: #7aa2ff;
+    --radius: 14px;
+    --maxw: 980px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7fb;
+      --bg-alt: #ffffff;
+      --card: #ffffff;
+      --border: rgba(15,23,42,0.08);
+      --text: #101828;
+      --text-dim: #5b6478;
+      --accent: #0f9d7c;
+      --accent-2: #3556d6;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: inherit; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    padding: 96px 0 72px;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(110,231,201,0.16), transparent 45%),
+      radial-gradient(circle at 85% 0%, rgba(122,162,255,0.18), transparent 40%);
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    margin: 0 0 12px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .role {
+    font-size: clamp(18px, 2.4vw, 22px);
+    color: var(--text-dim);
+    margin: 0 0 28px;
+    font-weight: 500;
+  }
+  .lede {
+    max-width: 620px;
+    font-size: 16.5px;
+    color: var(--text-dim);
+    margin: 0 0 34px;
+  }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14.5px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #071018;
+    border: none;
+  }
+  .btn.ghost { color: var(--text); }
+  .btn.ghost:hover { border-color: var(--accent); }
+
+  section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-size: 26px;
+    margin: 0 0 8px;
+    font-weight: 750;
+    letter-spacing: -0.01em;
+  }
+  .section-sub { color: var(--text-dim); margin: 0 0 34px; font-size: 15px; }
+
+  .fit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+  }
+  .fit-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .fit-card .tag {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .fit-card p { margin: 0; font-size: 14.5px; color: var(--text-dim); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+  }
+  .skill-group {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .skill-group h3 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill {
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(122,162,255,0.12);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .exp-item, .project-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 18px;
+  }
+  .exp-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .exp-head h3 { margin: 0; font-size: 18px; }
+  .exp-meta { color: var(--text-dim); font-size: 14px; }
+  .exp-org { color: var(--accent-2); font-weight: 600; font-size: 14.5px; margin-bottom: 12px; }
+  ul.bullets { margin: 0; padding-left: 20px; color: var(--text-dim); font-size: 14.5px; }
+  ul.bullets li { margin-bottom: 6px; }
+
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .project-item h3 { margin: 0 0 10px; font-size: 17px; }
+
+  .edu-lang-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .edu-lang-grid { grid-template-columns: 1fr; } }
+  .card-simple {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+  .card-simple h3 { margin: 0 0 4px; font-size: 16.5px; }
+  .card-simple .meta { color: var(--text-dim); font-size: 14px; margin-bottom: 4px; }
+
+  footer {
+    padding: 56px 0 72px;
+    text-align: center;
+  }
+  footer .contact-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+  }
+  footer p.note { color: var(--text-dim); font-size: 13.5px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Open to: Junior Full Stack Developer</span>
+    <h1>Rivka Azran</h1>
+    <p class="role">Full Stack Engineer — React · TypeScript · Node.js · NestJS · SQL</p>
+    <p class="lede">
+      Full stack engineer with hands-on experience building production web applications end-to-end —
+      from React interfaces to Node.js / NestJS services backed by relational databases. Comfortable
+      in Agile teams, code reviews, and the full development lifecycle from implementation to deployment.
+    </p>
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:ra0556745129@gmail.com">Email Me</a>
+      <a class="btn ghost" href="tel:0556745129">0556745129</a>
+      <a class="btn ghost" href="https://github.com/RivkiAzran" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="fit">
+  <div class="wrap">
+    <h2>Why This Role Fits</h2>
+    <p class="section-sub">Matched against the Junior Full Stack Developer opening in Kfar Saba</p>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <span class="tag">Full Stack Experience</span>
+        <p>1+ years building feature-rich web apps end-to-end: React / TypeScript on the frontend, Node.js / NestJS REST APIs on the backend.</p>
+      </div>
+      <div class="fit-card">
+        <span class="tag">Databases</span>
+        <p>Hands-on with relational databases — PostgreSQL, MySQL, and SQL Server — from schema design to data persistence.</p>
+      </div>
+      <div class="fit-card">
+        <span class="tag">Architecture &amp; OOP</span>
+        <p>Applied OOP and design patterns (Factory, Singleton) in multi-layered systems, with a focus on clean, maintainable code.</p>
+      </div>
+      <div class="fit-card">
+        <span class="tag">Agile &amp; Collaboration</span>
+        <p>Worked in an Agile team using Git, pull requests, and code reviews throughout the full implementation-to-deployment cycle.</p>
+      </div>
+      <div class="fit-card">
+        <span class="tag">JavaScript &amp; Responsive UI</span>
+        <p>Built user-facing React components and interfaces, working directly with HTML, CSS and modern JS tooling.</p>
+      </div>
+      <div class="fit-card">
+        <span class="tag">Communication</span>
+        <p>Native Hebrew, good English — comfortable working and communicating in both languages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <div class="pill-row">
+          <span class="pill">TypeScript</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">C#</span>
+          <span class="pill">Python</span>
+          <span class="pill">C++</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Frontend</h3>
+        <div class="pill-row">
+          <span class="pill">React</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Backend</h3>
+        <div class="pill-row">
+          <span class="pill">Node.js</span>
+          <span class="pill">NestJS</span>
+          <span class="pill">REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Databases</h3>
+        <div class="pill-row">
+          <span class="pill">PostgreSQL</span>
+          <span class="pill">MySQL</span>
+          <span class="pill">SQL Server</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Core</h3>
+        <div class="pill-row">
+          <span class="pill">OOP</span>
+          <span class="pill">Data Structures</span>
+          <span class="pill">Algorithms</span>
+          <span class="pill">Clean Code</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Tools</h3>
+        <div class="pill-row">
+          <span class="pill">Git</span>
+          <span class="pill">VS Code</span>
+          <span class="pill">Visual Studio</span>
+          <span class="pill">Linux</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="exp-item">
+      <div class="exp-head">
+        <h3>Full Stack Developer — Practicum</h3>
+        <span class="exp-meta">2025 – Present</span>
+      </div>
+      <div class="exp-org">Oz Software</div>
+      <ul class="bullets">
+        <li>Developed and maintained full-stack features using React, TypeScript, Node.js, NestJS, and PostgreSQL</li>
+        <li>Built user-facing components and scalable backend services integrated via REST APIs</li>
+        <li>Took part in the full development lifecycle: implementation, testing, review, and deployment</li>
+        <li>Worked with asynchronous data flows using React Query and Context API</li>
+        <li>Implemented Excel-based data import functionality, including validation, processing, and DB persistence</li>
+        <li>Collaborated in an Agile team environment using Git, pull requests, and code reviews</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Selected Projects</h2>
+    <div class="projects-grid">
+      <div class="project-item">
+        <h3>Online Course Management System</h3>
+        <ul class="bullets">
+          <li>Developed a role-based full-stack system with Node.js, React, and MySQL</li>
+          <li>Implemented authentication, authorization, and secure backend–frontend integration</li>
+          <li>Worked in pair-development, simulating real production workflows</li>
+        </ul>
+      </div>
+      <div class="project-item">
+        <h3>Volunteer Management Application — C# / .NET</h3>
+        <ul class="bullets">
+          <li>Designed multi-layered architecture using Factory and Singleton patterns</li>
+          <li>Implemented recursive logic and structured data handling with XML</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education &amp; Languages</h2>
+    <div class="edu-lang-grid">
+      <div class="card-simple">
+        <h3>Excellence Program in Computer Science &amp; Software Engineering</h3>
+        <div class="meta">Diploma (MAHAT Certification) — Lev Academic Center</div>
+        <div class="meta">2023 – 2025</div>
+      </div>
+      <div class="card-simple">
+        <h3>Languages</h3>
+        <div class="meta">Hebrew — Native</div>
+        <div class="meta">English — Good</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's Talk</h2>
+    <p class="section-sub">Available for the Junior Full Stack Developer role in Kfar Saba.</p>
+    <div class="contact-row">
+      <a class="btn primary" href="mailto:ra0556745129@gmail.com">ra0556745129@gmail.com</a>
+      <a class="btn ghost" href="tel:0556745129">0556745129</a>
+      <a class="btn ghost" href="https://github.com/RivkiAzran" target="_blank" rel="noopener">github.com/RivkiAzran</a>
+    </div>
+    <p class="note">Rivka Azran · Full Stack Engineer</p>
+  </div>
+</footer>
+
+</body>
+</html>
